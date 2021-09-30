@@ -281,17 +281,23 @@ Try to solve the challenges without making use of the Internet.
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ The whoami command
+### ✅ The whoami command
 
 **Describe in your own words what the `whoami` command does.**
 
-### ❌ The uptime command
+shows name of current user
+
+### ✅ The uptime command
 
 **Describe in your own words what the `uptime` command does.**
 
-### ❌ Help on ls
+It displays the time the system has been running , the amount of users , current hour : minutes : secondes and the load average
+
+### ✅ Help on ls
 
 **`ls` can be used to list the files and directories in Linux. If you execute the command `ls -h` you do not get any help about the command. How come? What does `ls -h` actually do?**
+
+ls -h makes list of files more readable for the user.
 
 ### ❌ Hidden files
 
