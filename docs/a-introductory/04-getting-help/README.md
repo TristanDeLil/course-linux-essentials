@@ -187,29 +187,45 @@ Find all the info you need in the man-pages. Make sure to comment the commands y
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ The free command
+### ✅ The free command
 
 *Describe in your own words what the `free` command does. Give an example and a partial output.*
+free give information about your memory. example: free -h
 
-### ❌ The id command
+'              total        used        free      shared  buff/cache   available
+Mem:       16629080     8670324     7729404       17720      229352     7825024
+Swap:      31119400      240832    30878568'
+
+### ✅ The id command
 
 *Describe in your own words what the `id` command does. Give an example and a partial output.*
+toont informatie van een gebruiker of group. id -gn: tristan
 
-### ❌ The tree command
+### ✅ The tree command
 
 *Describe in your own words what the `tree` command does. How do you list all subdirectories too? How can you only include directories? If the `tree` command is not available on your system you can install it using `sudo apt install tree`*
+print alle directories en files
+tree -a
+tree -d
 
-### ❌ The which command
+### ✅ The which command
 
 *Describe in your own words what the `which` command does. What is the result for `pwd` ?*
+which geeft het PATH weer van exe files of links zonder ze te exectuden.
+/usr/bin/pwd
 
-### ❌ The file command
+### ✅ The file command
 
 *Describe in your own words what the `file` command does. What is the result for `~/.bashrc` ?*
+het classifikeert het type van de file via 3 tests filesystem test , magic test en language test
+/home/tristan/.bashrc: ASCII text
 
-### ❌ The type command
+### ✅ The type command
 
 *Describe in your own words what the `type` command does. What is the result for `ls` and what is the result for `g++` ?*
+toont aan hoe de naam wordt gebruikt in de CLI als een command line
+ls is aliased to `ls --color=auto.
+g++ is /usr/bin/g++
 
 ### ❌ Counting lines and words
 
