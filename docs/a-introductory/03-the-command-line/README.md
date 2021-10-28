@@ -299,18 +299,33 @@ It displays the time the system has been running , the amount of users , current
 
 ls -h makes list of files more readable for the user.
 
-### ❌ Hidden files
+### ✅ Hidden files
 
 **Linux harbors some hidden files which are not automatically listed when executing `ls`. Find out how to list hidden files. How can we recognize hidden files?**
 
-### ❌ The man command
+ls -a
+hidden files zijn gemarkeert door een groen vierkant
+
+### ✅ The man command
 
 **Describe in your own words what the `man` command does.**
 
-### ❌ What shells are available
+de man command zal een manual van een commande weergeven. Dit geeft alle mogelijke SYNOPSIS weer , geeft een beschrijving van de commando,
+alle opties en hoe je het moet formatting en nog een paar extras.
+
+### ✅ What shells are available
 
 **Check the Internet on how you can get a list of all available shells on your system.**
 
-### ❌ What date is it
+sh
+bash
+rbash
+dash
+tmux
+screen
+
+### ✅ What date is it
 
 **How would you request the current date and time via the terminal?**
+
+date
