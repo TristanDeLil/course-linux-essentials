@@ -13,7 +13,7 @@ The static site is generated from markdown using VuePress.
 Setup local dev server
 
 ```shell
-yarn run docs:dev
+npm run docs:dev
 ```
 
 ## Teacher
