@@ -190,53 +190,89 @@ Mark challenges using a ✅ once they are finished.
 ### ✅ The free command
 
 *Describe in your own words what the `free` command does. Give an example and a partial output.*
+
+```text
 free give information about your memory. example: free -h
 
 '              total        used        free      shared  buff/cache   available
 Mem:       16629080     8670324     7729404       17720      229352     7825024
 Swap:      31119400      240832    30878568'
+```
 
 ### ✅ The id command
 
 *Describe in your own words what the `id` command does. Give an example and a partial output.*
+
+```text
 toont informatie van een gebruiker of group. id -gn: tristan
+```
 
 ### ✅ The tree command
 
 *Describe in your own words what the `tree` command does. How do you list all subdirectories too? How can you only include directories? If the `tree` command is not available on your system you can install it using `sudo apt install tree`*
+
+```text
 print alle directories en files
 tree -a
 tree -d
+```
 
 ### ✅ The which command
 
 *Describe in your own words what the `which` command does. What is the result for `pwd` ?*
+
+```text
 which geeft het PATH weer van exe files of links zonder ze te exectuden.
 /usr/bin/pwd
+```
 
 ### ✅ The file command
 
 *Describe in your own words what the `file` command does. What is the result for `~/.bashrc` ?*
+
+```text
 het classifikeert het type van de file via 3 tests filesystem test , magic test en language test
 /home/tristan/.bashrc: ASCII text
+```
 
 ### ✅ The type command
 
 *Describe in your own words what the `type` command does. What is the result for `ls` and what is the result for `g++` ?*
+
+```text
 toont aan hoe de naam wordt gebruikt in de CLI als een command line
 ls is aliased to `ls --color=auto.
 g++ is /usr/bin/g++
+```
 
 ### ✅ Counting lines and words
 
 *What command can be used to count lines and words in text? Give an example and explain the output.*
 
+```text
 de wc command
+
+voorbeeld: 
+wc text
+output: 5  20 125 text
+
+5 = het aantal newlines in het bestand
+20 = het aantal woorden in het bestand
+125 = is het aantal bytes in het bestand
+
+bestand inhoud:
+een text bestand om als voorbeeld te gebruiken.
+
+die bestand bevat nieks.
+
+was misschien een leugen bevat een paar newlines!
+```
 
 ### ✅ The wget command
 
 *How can you download a file from the Internet using the command line?. Find a file online to use it on and demonstrate its usage.*
 
+```text
 you can download a file by using the wget command
 for example: wget http://ftp.gnu.org/gnu/wget/wget-1.5.3.tar.gz
 
@@ -250,35 +286,55 @@ Saving to: ‘wget-1.5.3.tar.gz’
 wget-1.5.3.tar.gz             100%[=================================================>] 436.49K   572KB/s    in 0.8s
 
 2021-10-28 13:25:32 (572 KB/s) - ‘wget-1.5.3.tar.gz’ saved [446966/446966]
+```
 
 ### ✅ The dmesg command
 
 *Describe in your own words what the `dmesg` command does. Give an example and a partial output.*
 
+```text
 dmesg omschrijft en controleert de acties die de kernel ring buffer uitvoert
+```
 
-### ❌ Checksums
+### ✅ Checksums
 
 *Go to the website of Raspberry Pi - [https://www.raspberrypi.org/software/operating-systems](https://www.raspberrypi.org/software/operating-systems) and download the Raspberry Pi OS image using the `wget` command line tool. Now check if the SHA-256 checksum complies with the one being advertised on the website.*
 
+```text
 *What tool did you use to calculate the checksum? Demonstrate its usage.*
+ik gebruikt de SHA-256 checksum tool
+
+command:
+sha256sum 2021-10-30-raspios-bullseye-armhf-full.zip
+
+result:
+77952abf31ed745275d5d20180f60dac7328f95fafbb9b83a91d1b350fc3ad76  2021-10-30-raspios-bullseye-armhf-full.zip
+77952abf31ed745275d5d20180f60dac7328f95fafbb9b83a91d1b350fc3ad76  SHA256 file integrity hash
 
 *What is the use of this hash?*
+om te controleren of de file wel correct is geinstalleerd
+```
 
 ### ✅ The printenv command
 
 *Describe in your own words what the `printenv` command does.*
 
+```text
 print de waarden ven de gevraagde variable
+```
 
 ### ✅ IP Address
 
 *Find the IP address of your WiFi interface. What command did you use?*
 
+```bash
 ip addr show
+```
 
 ### ✅ IP of Sivir Server
 
 *What is the IP address of the internal server `sivir.devbit.be`? Make sure you are connected to the `Devbit` network.*
 
+```text
 de ip van sivir.devbit.be is 172.16.10.5
+```

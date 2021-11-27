@@ -377,17 +377,27 @@ Mark challenges using a ✅ once they are finished.
 
 *Try to login to the `daemon` system user account. Use `sudo su daemon`. What does it display as a message ? What application is outputting this message ? Run that application and prove it.*
 
-with `su daemon` : Authentication failure
 with `sudo su daemon` : This account is currently not available.
 
-### ❌ Creating group with id
+### ✅ Creating group with id
 
 *Create a group called `hackers` with the specific group id `1337`. Now create two users (students from the class) and add them both the group.*
 
+```bash
+sudo addgroup hackers -gid 1337
+sudo adduser arno
+sudo adduser emiel
+sudo adduser arno hackers
+sudo adduser emiel hackers
+```
 
 ### ❌ Difference false and nologin
 
 *Some user entries are showing `/bin/false` as the shell command. Do some research and explain what the difference is with `/usr/sbin/nologin`.*
+
+nologin displays een bericht `This account is currently not available` en dan de gebruiker onmiddelijk uitlogt. 
+False is een bin die aangeroepen wordt en een false terug geeft, waardoor de gebruiker onmiddelijk wordt uitgelogt.
+nologin is later dan false uitgekomen is meer gebruiksvriendelijk maar hebben allebij het zelfde resultaat.
 
 ### ❌ The auth.log file 
 

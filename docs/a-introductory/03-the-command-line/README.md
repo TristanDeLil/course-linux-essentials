@@ -285,47 +285,61 @@ Mark challenges using a ✅ once they are finished.
 
 **Describe in your own words what the `whoami` command does.**
 
+```text
 shows name of current user
+```
 
 ### ✅ The uptime command
 
 **Describe in your own words what the `uptime` command does.**
 
+```text
 It displays the time the system has been running , the amount of users , current hour : minutes : secondes and the load average
+```
 
 ### ✅ Help on ls
 
 **`ls` can be used to list the files and directories in Linux. If you execute the command `ls -h` you do not get any help about the command. How come? What does `ls -h` actually do?**
 
+```text
 ls -h makes list of files more readable for the user.
+```
 
 ### ✅ Hidden files
 
 **Linux harbors some hidden files which are not automatically listed when executing `ls`. Find out how to list hidden files. How can we recognize hidden files?**
 
+```bash
 ls -a
 hidden files zijn gemarkeert door een groen vierkant
+```
 
 ### ✅ The man command
 
 **Describe in your own words what the `man` command does.**
 
+```bash
 de man command zal een manual van een commande weergeven. Dit geeft alle mogelijke SYNOPSIS weer , geeft een beschrijving van de commando,
 alle opties en hoe je het moet formatting en nog een paar extras.
+```
 
 ### ✅ What shells are available
 
 **Check the Internet on how you can get a list of all available shells on your system.**
 
+```bash
 sh
 bash
 rbash
 dash
 tmux
 screen
+```
 
 ### ✅ What date is it
 
 **How would you request the current date and time via the terminal?**
 
+```bash
 date
+```
