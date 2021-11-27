@@ -183,14 +183,38 @@ Try to solve the challenges without using google. Better to use the man-pages to
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Enable Firewall
+### ✅ Enable Firewall
 
 *Install and enable the ufw service on your Raspberry Pi.*
 
+```bash
+sudo apt install ufw
+sudo systemctl start ufw
+sudo systemctl enable ufw
+```
+
 *Enable incoming traffic for ssh from any host.*
+
+```bash
+sudo ufw allow ssh
+sudo ufw allow 22
+sudo ufw allow 22/tcp
+```
 
 *Set the default rule to allow outgoing and deny incoming connections.*
 
-### ❌ Setup Apache
+```bash
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
+```
+
+### ✅ Setup Apache
 
 *Install and enable the apache webserver. Make sure to enable http connections to the Raspberry Pi. Test it out by surfing to your Raspberry Pi using a webbrowser.*
+
+```bash
+sudo apt install apache2
+sudo ufw allow http
+sudo ufw allow 80
+sudo ufw allow 80/tcp
+```

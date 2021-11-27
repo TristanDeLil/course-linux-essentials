@@ -379,6 +379,20 @@ Try to solve the challenges without using google. Better to use the man-pages to
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Etcetera
+### ✅ Etcetera
 
 *Who is the owner of the `/etc` directory on the system? What are the permissions on this directory? Why can you list the content of this directory?*
+
+```text
+drwxr-xr-x  1 root root    512 Nov 27 18:04 etc
+
+owner user = root
+owner group = root
+
+permission user: rwx = read , write , execute
+permission group: r-x = read , execute
+permission others: r-x = read , execute
+
+iedereen heeft read en execute permission, dit zijn de twee persmisions 
+die iemand nodig heeft om een ls command te moeten kunnen uitvoeren
+```

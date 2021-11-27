@@ -33,14 +33,14 @@ Make sure to commit your local changes before doing this.
 The command Line ✅
 getting help ✅
 Packet Manager ❌
-Users and Groups ❌
+Users and Groups ✅
 The Filesystem ❌
-Ownership and Permissions ❌
+Ownership and Permissions ✅
 Locating things ❌
 Making Linux your own ❌
 Docker for linux ❌
 Basic Shell Scripting ❌
-Uncomplicated FireWall ❌
+Uncomplicated FireWall ✅
 ```
 
 ## Teacher

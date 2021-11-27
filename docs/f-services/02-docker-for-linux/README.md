@@ -253,7 +253,7 @@ Try to solve the challenges without using google. Better to use the man-pages to
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Docker on the Pi
+### ✅ Docker on the Pi
 
 *Install docker and your raspberry pi and make sure the hello-world runs*.
 

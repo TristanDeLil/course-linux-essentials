@@ -373,11 +373,20 @@ Try to solve the challenges without using google. Better to use the man-pages to
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ System user accounts
+### ✅ System user accounts
 
 *Try to login to the `daemon` system user account. Use `sudo su daemon`. What does it display as a message ? What application is outputting this message ? Run that application and prove it.*
 
-with `sudo su daemon` : This account is currently not available.
+```text
+with sudo su daemon : This account is currently not available.
+
+nologin outputs this message via a file called nologin.txt
+
+tristan@fakeding:~$ nologin
+This account is currently not available.
+
+(nologin.txt files is niet aanpasbaar in ubuntu)
+```
 
 ### ✅ Creating group with id
 
@@ -391,28 +400,85 @@ sudo adduser arno hackers
 sudo adduser emiel hackers
 ```
 
-### ❌ Difference false and nologin
+### ✅ Difference false and nologin
 
 *Some user entries are showing `/bin/false` as the shell command. Do some research and explain what the difference is with `/usr/sbin/nologin`.*
 
-nologin displays een bericht `This account is currently not available` en dan de gebruiker onmiddelijk uitlogt. 
-False is een bin die aangeroepen wordt en een false terug geeft, waardoor de gebruiker onmiddelijk wordt uitgelogt.
-nologin is later dan false uitgekomen is meer gebruiksvriendelijk maar hebben allebij het zelfde resultaat.
+```text
+nologin displays een bericht `This account is currently not available`
+met als resultaat dat de gebruiker onmiddelijk uitgelogd.
 
-### ❌ The auth.log file 
+False is een bin die aangeroepen wordt en een false terug geeft 
+waardoor de gebruiker onmiddelijk wordt uitgelogd.
+
+nologin is later dan false uitgekomen is meer gebruiksvriendelijk 
+maar hebben allebij het zelfde resultaat.
+```
+
+### ✅ The auth.log file 
 
 *What does the file `/log/var/auth.log` track? Provide an example of a command that shows entries being added to the log after you executed the command. Include the entry here that was added to the file.*
 
-### ❌ Locking out Steve
+```text
+dit bestand houdt bij logs bij van alle logins geslaagd en mislukt, 
+de manier waarop en de date waarin ze hebben ingelogd.
+
+sudo less /var/log/auth.log
+
+voorbeeld(raspberry pi):
+Nov 27 17:31:29 raspberrypi sshd[1305]: Accepted password for tristan from 192.168.0.107 port 64236 ssh2
+Nov 27 17:31:29 raspberrypi sshd[1305]: pam_unix(sshd:session): session opened for user tristan by (uid=0)
+Nov 27 17:31:29 raspberrypi systemd-logind[456]: New session 4 of user tristan.
+Nov 27 17:31:29 raspberrypi systemd: pam_unix(systemd-user:session): session opened for user tristan by (uid=0)
+Nov 27 17:31:51 raspberrypi sudo:  tristan : TTY=pts/1 ; PWD=/home/tristan ; USER=root ; COMMAND=/usr/bin/less /var/log/auth.log
+Nov 27 17:31:51 raspberrypi sudo: pam_unix(sudo:session): session opened for user root by tristan(uid=0)
+Nov 27 17:37:52 raspberrypi sudo: pam_unix(sudo:session): session closed for user root
+Nov 27 17:38:13 raspberrypi sudo:  tristan : TTY=pts/1 ; PWD=/home/tristan ; USER=root ; COMMAND=/usr/bin/man /var/log/auth.log
+Nov 27 17:38:13 raspberrypi sudo: pam_unix(sudo:session): session opened for user root by tristan(uid=0)
+Nov 27 17:38:35 raspberrypi sudo: pam_unix(sudo:session): session closed for user root
+Nov 27 17:43:23 raspberrypi sudo:  tristan : TTY=pts/1 ; PWD=/home/tristan ; USER=root ; COMMAND=/usr/bin/less /var/log/auth.log
+Nov 27 17:43:23 raspberrypi sudo: pam_unix(sudo:session): session opened for user root by tristan(uid=0)
+```
+
+### ✅ Locking out Steve
 
 *Create a new user steve and set a password for the user. Login to the `steve` account using `su` to make sure it works.*
 
+```bash
+sudo adduser steve
+```
+
 *Now lock the user account and make sure there is no way anyone can login as `steve`, not even `root`*
 
-### ❌ Zsh Shell
+```bash
+sudo passwd -l steve
+sudo usermod --expiredate 1 steve
+```
+
+### ✅ Zsh Shell
 
 *Install the zsh shell on your system. Now change your own shell to `zsh`. Make sure to do this in such a way that a new session will also use `zsh`.*
 
-### ❌ Semester Account
+```bash
+sudo apt install zsh
+chsh -s /bin/zsh
+```
+
+### ✅ Semester Account
 
 *Create a new account for an exchange student called `maggie`. Make sure the account can only be used until 31st of January of the next year. Basically only for this semester*.
+
+```bash
+sudo adduser maggie
+sudo usermod --expiredate 2022-1-31 maggie
+
+sudo chage -l maggie
+
+Last password change                                    : Nov 27, 2021
+Password expires                                        : never
+Password inactive                                       : never
+Account expires                                         : Jan 31, 2022
+Minimum number of days between password change          : 0
+Maximum number of days between password change          : 99999
+Number of days of warning before password expires       : 7
+```
