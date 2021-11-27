@@ -227,17 +227,35 @@ toont aan hoe de naam wordt gebruikt in de CLI als een command line
 ls is aliased to `ls --color=auto.
 g++ is /usr/bin/g++
 
-### ❌ Counting lines and words
+### ✅ Counting lines and words
 
 *What command can be used to count lines and words in text? Give an example and explain the output.*
 
-### ❌ The wget command
+de wc command
+
+### ✅ The wget command
 
 *How can you download a file from the Internet using the command line?. Find a file online to use it on and demonstrate its usage.*
 
-### ❌ The dmesg command
+you can download a file by using the wget command
+for example: wget http://ftp.gnu.org/gnu/wget/wget-1.5.3.tar.gz
+
+--2021-10-28 13:25:31--  http://ftp.gnu.org/gnu/wget/wget-1.5.3.tar.gz
+Resolving ftp.gnu.org (ftp.gnu.org)... 209.51.188.20, 2001:470:142:3::b
+Connecting to ftp.gnu.org (ftp.gnu.org)|209.51.188.20|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 446966 (436K) [application/x-gzip]
+Saving to: ‘wget-1.5.3.tar.gz’
+
+wget-1.5.3.tar.gz             100%[=================================================>] 436.49K   572KB/s    in 0.8s
+
+2021-10-28 13:25:32 (572 KB/s) - ‘wget-1.5.3.tar.gz’ saved [446966/446966]
+
+### ✅ The dmesg command
 
 *Describe in your own words what the `dmesg` command does. Give an example and a partial output.*
+
+dmesg omschrijft en controleert de acties die de kernel ring buffer uitvoert
 
 ### ❌ Checksums
 
@@ -247,14 +265,20 @@ g++ is /usr/bin/g++
 
 *What is the use of this hash?*
 
-### ❌ The printenv command
+### ✅ The printenv command
 
 *Describe in your own words what the `printenv` command does.*
 
-### ❌ IP Address
+print de waarden ven de gevraagde variable
+
+### ✅ IP Address
 
 *Find the IP address of your WiFi interface. What command did you use?*
 
-### ❌ IP of Sivir Server
+ip addr show
+
+### ✅ IP of Sivir Server
 
 *What is the IP address of the internal server `sivir.devbit.be`? Make sure you are connected to the `Devbit` network.*
+
+de ip van sivir.devbit.be is 172.16.10.5
