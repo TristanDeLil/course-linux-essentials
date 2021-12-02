@@ -13,7 +13,8 @@ The static site is generated from markdown using VuePress.
 Setup local dev server
 
 ```shell
-npm run docs:dev
+
+windows npm run docs:dev
 ```
 
 ## Students
