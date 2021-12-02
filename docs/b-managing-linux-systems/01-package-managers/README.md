@@ -279,16 +279,31 @@ Mark challenges using a ✅ once they are finished.
 
 *Install the `nmap` package using `apt`.*
 
+```bash
+sudo apt install nmap
+```
+
 *Port scan the server `sivir.devbit.be`. Make sure you are connected to the `Devbit` network. What services are running on this machine?*
 
-### ❌ NodeJS
+### ✅ NodeJS
 
 *Install `snap` using `apt`. Next use `snap` to install `nodejs`.*
 
-*Now launch node and tryout the following little code snippet:*
+```bash
+sudo apt install snap
+sudo snap install node --classic
+```
 
+*Now launch node and tryout the following little code snippet:*
 ```js
 console.log("Hello World from JavaScript");
+
+node
+Welcome to Node.js v16.13.1.
+Type ".help" for more information.
+
+console.log("Hello World from JavaScript");
+Hello World from JavaScript
 ```
 
 ### ❌ Dhcpdump
