@@ -11,10 +11,8 @@ Comments and additions are more than welcome.
 The static site is generated from markdown using VuePress.
 
 Setup local dev server
-git remote set-url origin git@github.com:TristanDeLil/dotfiles_ubuntu.git
-git remote add origin git@github.com:TristanDeLil/dotfiles_ubuntu.git
-```shell
 
+```shell
 windows npm run docs:dev
 ```
 
@@ -42,6 +40,7 @@ Locating things ❌
 Making Linux your own ❌
 Docker for linux ❌
 Basic Shell Scripting ❌
+Cron jobs ❌
 Uncomplicated FireWall ✅
 ```
 
