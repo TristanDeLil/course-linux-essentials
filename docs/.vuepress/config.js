@@ -124,6 +124,15 @@ module.exports = {
         ]
       },
       {
+      title: 'LABO PREP',
+      path: '/labo_prep/',      // optional, which should be a absolute path.
+      collapsable: false, // optional, defaults to true
+      sidebarDepth: 1,    // optional, defaults to 1
+      children: [
+        '/labo_prep/commands/',
+      ]
+      },
+      {
         title: 'Online Tools',
         // path: '/z-references/',      // optional, which should be a absolute path.
         collapsable: false, // optional, defaults to true
