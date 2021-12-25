@@ -262,11 +262,20 @@ Mark challenges using a ✅ once they are finished.
 
 *Install the `locate` command and update the index database.*
 
+```bash
+ sudo apt install locate -y
+```
+
 *Locate the following files on your system:*
 
 * `sudoers.dist`
 * the configuration file `ssh_config`
 * `auth.log`
+
+```bash
+locate sudoers.dist
+locate ssh_config
+```
 
 ### ❌ Python man-pages
 

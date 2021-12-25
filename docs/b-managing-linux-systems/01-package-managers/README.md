@@ -330,11 +330,31 @@ Find all the info you need in the man-pages. Document the commands you used for 
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Cowsay
+### ✅ Cowsay
 
 *Download the `.deb` package for `cowsay` and install it using `dpkg`. You can find the package at [https://packages.debian.org/sid/all/cowsay/download](https://packages.debian.org/sid/all/cowsay/download).*
 
+```bash
+sudo dpkg -i http://ftp.uk.debian.org/debian/pool/main/c/cowsay/cowsay-off_3.03%2Bdfsg2-3_all.deb
+```
+
 *Run it once it's installed. What does it do ?*
+
+```bash 
+cowsay garry
+```
+
+```text
+ _______
+< garry >
+ -------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+```
 
 ### ❌ Nmap
 
@@ -367,9 +387,81 @@ console.log("Hello World from JavaScript");
 Hello World from JavaScript
 ```
 
-### ❌ Dhcpdump
+### ✅ Dhcpdump
 
 *Install the `dhcpdump` and try to capture some DHCP traffic in the network. Work together with another student and try to capture the DHCP request of his/her laptop. Find out what the MAC Address is and check it using the `ip` or `ipconfig` tool.*
+
+```text
+  TIME: 2021-12-25 15:41:30.193
+    IP: 0.0.0.0 (bc:a5:8b:c6:a:74) > 255.255.255.255 (ff:ff:ff:ff:ff:ff)
+    OP: 1 (BOOTPREQUEST)
+ HTYPE: 1 (Ethernet)
+  HLEN: 6
+  HOPS: 0
+   XID: 1990f006
+  SECS: 0
+ FLAGS: 0
+CIADDR: 0.0.0.0
+YIADDR: 0.0.0.0
+SIADDR: 0.0.0.0
+GIADDR: 0.0.0.0
+CHADDR: bc:a5:8b:c6:0a:74:00:00:00:00:00:00:00:00:00:00
+ SNAME: .
+ FNAME: .
+OPTION:  53 (  1) DHCP message type         1 (DHCPDISCOVER)
+OPTION:  61 (  7) Client-identifier         01:bc:a5:8b:c6:0a:74
+OPTION:  57 (  2) Maximum DHCP message size 1500
+OPTION:  60 ( 15) Vendor class identifier   android-dhcp-10
+OPTION:  12 ( 14) Host name                 Galaxy-A7-2018
+OPTION:  55 ( 10) Parameter Request List      1 (Subnet mask)
+					      3 (Routers)
+					      6 (DNS server)
+					     15 (Domainname)
+					     26 (Interface MTU)
+					     28 (Broadcast address)
+					     51 (IP address leasetime)
+					     58 (T1)
+					     59 (T2)
+					     43 (Vendor specific info)
+					    
+---------------------------------------------------------------------------
+
+  TIME: 2021-12-25 15:41:30.297
+    IP: 0.0.0.0 (bc:a5:8b:c6:a:74) > 255.255.255.255 (ff:ff:ff:ff:ff:ff)
+    OP: 1 (BOOTPREQUEST)
+ HTYPE: 1 (Ethernet)
+  HLEN: 6
+  HOPS: 0
+   XID: 1990f006
+  SECS: 0
+ FLAGS: 0
+CIADDR: 0.0.0.0
+YIADDR: 0.0.0.0
+SIADDR: 0.0.0.0
+GIADDR: 0.0.0.0
+CHADDR: bc:a5:8b:c6:0a:74:00:00:00:00:00:00:00:00:00:00
+ SNAME: .
+ FNAME: .
+OPTION:  53 (  1) DHCP message type         3 (DHCPREQUEST)
+OPTION:  61 (  7) Client-identifier         01:bc:a5:8b:c6:0a:74
+OPTION:  50 (  4) Request IP address        192.168.0.148
+OPTION:  54 (  4) Server identifier         192.168.0.1
+OPTION:  57 (  2) Maximum DHCP message size 1500
+OPTION:  60 ( 15) Vendor class identifier   android-dhcp-10
+OPTION:  12 ( 14) Host name                 Galaxy-A7-2018
+OPTION:  55 ( 10) Parameter Request List      1 (Subnet mask)
+					      3 (Routers)
+					      6 (DNS server)
+					     15 (Domainname)
+					     26 (Interface MTU)
+					     28 (Broadcast address)
+					     51 (IP address leasetime)
+					     58 (T1)
+					     59 (T2)
+					     43 (Vendor specific info)
+					    
+---------------------------------------------------------------------------
+```
 
 ### ✅ MQTT
 

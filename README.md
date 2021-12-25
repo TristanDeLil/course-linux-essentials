@@ -32,9 +32,9 @@ Make sure to commit your local changes before doing this.
 ```text
 The command Line ✅
 getting help ✅
-Packet Manager ❌
+Packet Manager ✅
 Users and Groups ✅
-The Filesystem ❌
+The Filesystem ✅
 Ownership and Permissions ✅
 Locating things ❌
 Making Linux your own ❌

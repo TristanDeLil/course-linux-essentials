@@ -634,40 +634,150 @@ Try to solve the challenges without using google. Better to use the man-pages to
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Authentication Log
+### ✅ Authentication Log
 
 *There is a file on the system that logs authentication changes and failures. Can you guess where it can be found? Provide the path to the file.*
 
-### ❌ Apt Source List
+```bash
+/var/log/auth.log
+
+sudo less /var/log/auth.log
+```
+
+### ✅ Apt Source List
 
 *The apt tool uses a configuration file which specifies in which repositories it should look for packages. Its called the apt `sources.list` file. Can you guess where it can be found? Provide the path to the file.*
 
-### ❌ Tmp Filesystem
+```text
+/etc/apt/sources.list
+```
+
+### ✅ Tmp Filesystem
 
 *Create a file called `hello` in `/tmp`. Restart your linux distro using `reboot`. Where is the file? What happened?*
 
-### ❌ Timestamps
+```text
+the file is gone. the tmp folder is a folder that is automatically wiped out by reboot.
+```
+
+### ✅ Timestamps
 
 *Create a file called `first-of-many` in your home directory. Use `nano` to add some content to the file. Now list the details of the file such as the size and when it was last modified.*
 
-### ❌ No space for spaces
+```bash
+touch first-of-many
+nano first-of-many
+stat first-of-many
+```
+
+result
+
+```text
+  File: first-of-many
+  Size: 59        	Blocks: 8          IO Block: 4096   regular file
+Device: 812h/2066d	Inode: 3933668     Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/ tristan)   Gid: ( 1000/ tristan)
+Access: 2021-12-25 16:15:34.851211531 +0100
+Modify: 2021-12-25 16:15:30.371061380 +0100
+Change: 2021-12-25 16:15:30.371061380 +0100
+ Birth: 2021-12-25 16:10:33.312222907 +0100
+```
+
+### ✅ No space for spaces
 
 *Try to create a file called `second try` (with the space included) using the command `touch second try` in your home directory. What happened? Why did this happen? How can you actually achieve creating a file with a space in its name?*
 
-### ❌ The root
+```bash
+touch second try
+```
+
+creates two files named second and try
+result
+
+```text
+ls
+Desktop    dotfiles   error.log  first-of-many  outpul.log  Public  snap       test.txt  Videos
+Documents  Downloads  files.txt  Music          Pictures    second  Templates  try
+```
+
+how to get files with spaces in the name
+
+```bash
+touch 'second try'
+touch second\ try
+```
+
+### ✅ The root
 
 *Try to create a directory `/backups` (under the root of the filesystem). Why is it failing?*
 
+```bash
+mkdir /backups
+```
+
+```text
+Permission denied omdat je als user geen rechten hebt in de /root directory
+```
+
 *Now use `sudo` to create the directory. Try creating a file called `README.md` within this `/backups` directory. Can you do it? Why / Why not?*
 
-### ❌ Bash RC
+```bash
+sudo mkdir /backups
+cd /backups
+touch README.md
+sudo touch README.md
+```
+
+```text
+je kan alleen maar als je sudo voor je commando zet. want als gewone gebruiker kan je de file niet aanmaken aangezien de root de owner van de dir is.
+```
+
+### ✅ Bash RC
 
 *In your home directory you will find a file called `.bashrc`. Create a backup of that file called `.bashrc.bak`.*
 
-### ❌ Sym Linking
+```bash
+cp -v .bashrc .bashrc.bak
+```
+
+### ✅ Sym Linking
 
 *What does the tool `ln` allow you to do? Use it to create such a link in your home directory called `secrets` to the file `/etc/passwd`. Now use the `cat` tool to open the file `secrets`. What do you see? What happened?*
 
-### ❌ SD Card
+```text
+ln allows you to create hard and soft links:
+hard links are a additional name for a file.
+soft links are a shortcurt or indirect pointer to a file or dir.
+```
+
+```bash
+ln -s /etc/passwd secrets
+cat secrets
+```
+
+```text
+the secret file has the exact same content then that of the /etc/passwd
+
+stat secrets
+  File: secrets -> /etc/passwd
+  Size: 11        	Blocks: 0          IO Block: 4096   symbolic link
+Device: 812h/2066d	Inode: 3950917     Links: 1
+Access: (0777/lrwxrwxrwx)  Uid: ( 1000/ tristan)   Gid: ( 1000/ tristan)
+Access: 2021-12-25 16:53:22.462668506 +0100
+Modify: 2021-12-25 16:53:21.226641241 +0100
+Change: 2021-12-25 16:53:21.226641241 +0100
+ Birth: 2021-12-25 16:53:21.226641241 +0100
+```
+
+### ✅ SD Card
 
 *Plugin an SD Card or a USB stick into you computer. Where can we find the actual block device? Where is the filesystem mounted? What is the difference between these two?*
+
+```text
+block device: Bus 001 Device 005: ID 058f:6387 Alcor Micro Corp. Flash Drive
+
+filesystem: /media/<username>
+
+block device is where the usb is mounted in terms of hardware
+filesystem is where the usb is mounted in terms of software
+```
