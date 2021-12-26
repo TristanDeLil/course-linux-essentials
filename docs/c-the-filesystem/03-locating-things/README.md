@@ -281,9 +281,17 @@ locate ssh_config
 
 *Use the `whereis` tool to determine the location of the man-pages of `python`.*
 
-### ❌ Python man-pages
+### ✅ Python man-pages
 
 *Use the `whereis` tool to determine the location of the `find` binary.*
+
+```bash
+whereis find
+```
+
+```text
+find: /usr/bin/find
+```
 
 ### ❌ Which
 
