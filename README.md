@@ -39,8 +39,8 @@ Ownership and Permissions ✅
 Locating things ❌
 Making Linux your own ❌
 Docker for linux ❌
-Basic Shell Scripting ❌
-Cron jobs ❌
+Basic Shell Scripting ✅
+Cron jobs ✅
 Uncomplicated FireWall ✅
 ```
 

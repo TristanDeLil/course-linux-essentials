@@ -604,11 +604,23 @@ Solve the challenges by creating small bash scripts. Place the bash scripts here
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Log the Date
+### ✅ Log the Date
 
 *Create a script that output the date every 10 seconds. Use the `sleep` command to wait between calls to the `date` command.*
 
-### ❌ Available Memory
+```text
+#!/usr/bin/env bash
+
+datum=$(date)
+
+while :
+do
+  echo current date is "$datum"
+  sleep 10s
+done
+```
+
+### ✅ Available Memory
 
 *Output the available system memory together with the current date in the following format:*
 
@@ -616,9 +628,18 @@ Mark challenges using a ✅ once they are finished.
 [Thu 14 May 2020 11:12:55 AM CEST] MemAvailable:   28439572 kB
 ```
 
+```text                               
+#!/usr/bin/env bash
+
+datum=$(TZ='America/New_York' date)
+mem=$(grep MemAvailable /proc/meminfo)
+echo ["$datum" "$mem"
+```
+
+
 *The available memory can be found in the file `/proc/meminfo`. Use the `grep` tool to filter out the line with MemAvailable.*
 
-### ❌ Fetching Github Keys
+### ✅ Fetching Github Keys
 
 *Create a script that fetches the public SSH keys of a user on GitHub and displays them in the terminal. This can be accomplished by using the curl tool to access the endpoint `https://github.com/<username>.keys`, where `<username>` is an existing github username.*
 
@@ -639,10 +660,52 @@ Fetching Keys
 ...
 ```
 
+```text
+#!/usr/bin/env bash
+
+echo "Please enter GitHub username: "
+read fullname
+echo "Fetching Keys"
+
+key=$(curl https://github.com/$fullname.keys)
+
+echo "$key"
+```
+
 ### ❌ DHCP Traffic
 
 *Create a script that filters DHCP network traffic and outputs matching MAC-Addresses, IP-Addresses and Hostnames.*
 
-### ❌ Backups
+### ✅ Backups
 
 *Choose a directory on your system (best to choose one in your home-dir). Create a script that archives this directory in a `.tar.gz` tarball file. Add a timestamp in the name of the output file.*
+
+./backup_home
+
+```text
+#!/usr/bin/env bash
+
+# What to backup. 
+backup_files="/home"
+
+# Where to backup to.
+dest="/backup"
+
+# Create archive filename.
+day=$(date +%A)
+hostname=$(hostname -s)
+archive_file="$hostname-$day.tgz"
+
+# Print start status message.
+echo "Backing up $backup_files to $dest/$archive_file"
+date
+echo
+
+# Backup the files using tar.
+tar czf $dest/$archive_file $backup_files
+
+# Print end status message.
+echo
+echo "Backup finished"
+date
+```

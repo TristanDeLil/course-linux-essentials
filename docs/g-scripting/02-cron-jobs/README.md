@@ -144,10 +144,19 @@ Mark challenges using a ✅ once they are finished.
 15 * * * * mosquitto_pub -h mqtt.devbit.be -t linux/alive/tristan -m “The cake is a lie”
 ```
 
-### ❌ My IP
+### ✅ My IP
 
 *Create a cron-job that will publish your raspberry pi's IP address to the `mqtt.devbit.be` broker on the topic `linux/ip/<yourname>` every minute. You can use the `mosquitto_pub` command for this.*
 
-### ❌ Backup Home
+```text
+ip="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
+* * * * * mosquitto_pub -h mqtt.devbit.be -t linux/ip/tristan -m $ip
+```
+
+### ✅ Backup Home
 
 *Create a cron-job that will backup your user directory to a `tar.gz` archive file every day at a specific time. Choose the time yourself.*
+
+```text
+0 17 * * * ./backup_home
+```
